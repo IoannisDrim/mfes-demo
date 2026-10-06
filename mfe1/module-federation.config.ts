@@ -7,11 +7,9 @@ export default createModuleFederationConfig({
   exposes: {
     './integrated': './src/mfe1.integrated',
   },
-  // The root tsconfig.json only holds project references, so the type-generation
-  // step has to be pointed at the config that actually carries compilerOptions.
-  dts: {
-    generateTypes: { tsConfigPath: './tsconfig.app.json' },
-  },
+  // Automatic type generation for the exposed modules is off. The host declares
+  // the remote's shape by hand instead; see the README for the trade-off.
+  dts: false,
   shared: {
     react: { singleton: true },
     'react/': { singleton: true },

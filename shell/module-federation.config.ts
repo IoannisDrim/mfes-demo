@@ -1,6 +1,6 @@
 import { createModuleFederationConfig } from '@module-federation/vite';
 
-const MFE1_URL = process.env.MFE1_URL ?? 'http://localhost:5001';
+const MFE1_URL = process.env.MFE1_URL ?? 'http://localhost:4001';
 
 export default createModuleFederationConfig({
     name: 'shell',

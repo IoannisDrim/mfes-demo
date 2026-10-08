@@ -5,7 +5,7 @@ import mfConfig from './module-federation.config.ts';
 
 // https://vite.dev/config/
 export default defineConfig({
-  server: { port: 5002, strictPort: true },
-  preview: { port: 5002, strictPort: true },
+  server: { port: 4000, strictPort: true },
+  preview: { port: 4000, strictPort: true },
   plugins: [react(), federation(mfConfig)],
 })

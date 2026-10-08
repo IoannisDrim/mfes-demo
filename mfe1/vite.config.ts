@@ -3,7 +3,7 @@ import { defineConfig, type Connect, type Plugin } from 'vite'
 import { federation } from "@module-federation/vite";
 import mfConfig from './module-federation.config.ts';
 
-const PUBLIC_URL = process.env.PUBLIC_URL ?? 'http://localhost:5001';
+const PUBLIC_URL = process.env.PUBLIC_URL ?? 'http://localhost:4001';
 
 // Standalone only: the app's router runs under basename "/properties", so the
 // server root has nothing to match. Send it to the mount path instead, in both
@@ -32,7 +32,7 @@ function redirectRootToMountPath(mountPath: string): Plugin {
 // https://vite.dev/config/
 export default defineConfig({
   base: PUBLIC_URL,
-  server: { port: 5001, strictPort: true, origin: PUBLIC_URL },
-  preview: { port: 5001, strictPort: true },
+  server: { port: 4001, strictPort: true, origin: PUBLIC_URL },
+  preview: { port: 4001, strictPort: true },
   plugins: [react(), federation(mfConfig), redirectRootToMountPath('/properties')],
 })

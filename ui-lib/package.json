@@ -1,0 +1,24 @@
+{
+  "name": "@mfes-demo/ui-lib",
+  "version": "1.0.0",
+  "private": false,
+  "type": "module",
+  "files": ["dist"],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./styles.css": "./dist/styles.css"
+  },
+  "scripts": {
+    "build": "tsc && cp src/styles.css dist/styles.css"
+  },
+  "peerDependencies": {
+    "react": ">=19"
+  },
+  "devDependencies": {
+    "@types/react": "19.2.18",
+    "typescript": "6.0.2"
+  }
+}

@@ -1,0 +1,82 @@
+/* Design tokens. Every app reads these, so the names are a public contract:
+   CSS Modules hash class names but never custom properties, which is exactly
+   why one stylesheet can theme three independently built apps. Class names are
+   global and "ui"-prefixed for the same reason.
+
+   The selectors match any element, not just :root, because each app sets
+   data-theme on its own root. Custom properties inherit, so an app themes its
+   own subtree and nothing else. */
+
+:root,
+[data-theme='light'] {
+  --ui-font-family: sans-serif;
+  --ui-color-bg: #ffffff;
+  --ui-color-text: #333333;
+  --ui-color-muted: #6b7280;
+  --ui-color-border: #e5e7eb;
+  --ui-color-border-strong: #cccccc;
+  --ui-color-hover: #f3f4f6;
+  --ui-color-accent: #2563eb;
+}
+
+[data-theme='dark'] {
+  --ui-color-bg: #111827;
+  --ui-color-text: #e5e7eb;
+  --ui-color-muted: #9ca3af;
+  --ui-color-border: #374151;
+  --ui-color-border-strong: #4b5563;
+  --ui-color-hover: #1f2937;
+  --ui-color-accent: #60a5fa;
+}
+
+body {
+  margin: 0;
+  background: var(--ui-color-bg);
+  color: var(--ui-color-text);
+  font-family: var(--ui-font-family);
+}
+
+/* table */
+
+.uiTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.uiTable th,
+.uiTable td {
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid var(--ui-color-border);
+}
+
+.uiTable th {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--ui-color-muted);
+}
+
+.uiTableRow {
+  position: relative;
+}
+
+.uiTableRow:hover {
+  background: var(--ui-color-hover);
+}
+
+.uiTableRowLink {
+  color: var(--ui-color-text);
+  text-decoration: none;
+}
+
+.uiTableRowLink::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+.uiTableRowLink:focus-visible {
+  outline: 2px solid var(--ui-color-accent);
+  outline-offset: -2px;
+}

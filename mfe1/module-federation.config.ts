@@ -16,5 +16,10 @@ export default createModuleFederationConfig({
     'react-dom': { singleton: true },
     'react-dom/': { singleton: true },
     'react-router-dom': { singleton: true },
+    // Shared as a singleton so the host and the remotes run one copy of the
+    // design system rather than one each, and so all of them land on the same
+    // theme context. Without it each app gets a context of its own, and the
+    // remotes sit on its default: the host switches to dark, they stay light.
+    '@mfes-demo/ui-lib': { singleton: true },
   }
 });

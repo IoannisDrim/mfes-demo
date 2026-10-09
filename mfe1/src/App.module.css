@@ -1,58 +1,15 @@
+/* The table and the design tokens come from the design system. What is left
+   here is styling that only this app uses. */
+
 .app {
-  font-family: sans-serif;
   padding: 1rem;
+  background: var(--ui-color-bg);
+  color: var(--ui-color-text);
 }
 
 .title {
   margin: 0 0 1rem;
   font-size: 1.25rem;
-}
-
-/* properties table */
-
-.table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.table th,
-.table td {
-  text-align: left;
-  padding: 0.5rem 0.75rem;
-  border-bottom: 1px solid #e5e7eb;
-}
-
-.table th {
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  color: #6b7280;
-}
-
-/* the row is the click target: .rowLink stretches a pseudo-element over it,
-   so there is still exactly one anchor carrying the accessible name */
-.row {
-  position: relative;
-}
-
-.row:hover {
-  background: #f3f4f6;
-}
-
-.rowLink {
-  color: #333;
-  text-decoration: none;
-}
-
-.rowLink::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-}
-
-.rowLink:focus-visible {
-  outline: 2px solid #2563eb;
-  outline-offset: -2px;
 }
 
 /* back link */
@@ -62,13 +19,13 @@
   align-items: center;
   gap: 0.25rem;
   margin-bottom: 0.5rem;
-  color: #6b7280;
+  color: var(--ui-color-muted);
   font-size: 0.875rem;
   text-decoration: none;
 }
 
 .back:hover {
-  color: #333;
+  color: var(--ui-color-text);
 }
 
 .backIcon {
@@ -81,24 +38,24 @@
 .menu {
   display: flex;
   gap: 0.25rem;
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid var(--ui-color-border);
   margin-bottom: 1rem;
 }
 
 .menuItem {
   padding: 0.5rem 0.75rem;
-  color: #333;
+  color: var(--ui-color-text);
   text-decoration: none;
   border-bottom: 2px solid transparent;
 }
 
 .menuItem:hover {
-  background: #f3f4f6;
+  background: var(--ui-color-hover);
 }
 
 .active {
-  color: #2563eb;
-  border-bottom-color: #2563eb;
+  color: var(--ui-color-accent);
+  border-bottom-color: var(--ui-color-accent);
   font-weight: 600;
 }
 
@@ -108,7 +65,7 @@
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  color: #6b7280;
+  color: var(--ui-color-muted);
 }
 
 .details dd {

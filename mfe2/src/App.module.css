@@ -33,6 +33,18 @@
   line-height: 1;
 }
 
+/* cross-app link */
+
+.crossLink {
+  color: var(--ui-color-accent);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.crossLink:hover {
+  text-decoration: underline;
+}
+
 /* detail lists */
 
 .details dt {
